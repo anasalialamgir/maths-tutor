@@ -1,0 +1,719 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0" />
+  <title>O-Level Maths Home Tutor | DHA & Bahria Town (Demo)</title>
+  <meta name="description" content="1-on-1 O-Level Maths home tutoring in DHA & Bahria Town. Turn around grades before school mocks. Book a free diagnostic trial class." />
+  <style>
+    :root {
+      --primary: #0f4c81;
+      --primary-dark: #0a3258;
+      --whatsapp: #25d366;
+      --whatsapp-hover: #1ebd5a;
+      --cta: #ea580c;
+      --cta-hover: #c2410c;
+      --text-main: #0f172a;
+      --text-muted: #64748b;
+      --bg: #f8fafc;
+      --card-bg: #ffffff;
+      --border: #e2e8f0;
+      --radius: 12px;
+      --font: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: var(--font);
+      background-color: var(--bg);
+      color: var(--text-main);
+      line-height: 1.5;
+      -webkit-font-smoothing: antialiased;
+      padding-bottom: 80px; /* Offset for sticky bottom CTA bar */
+    }
+
+    /* Demo Notice Badge */
+    .demo-bar {
+      background: #1e293b;
+      color: #94a3b8;
+      font-size: 0.74rem;
+      text-align: center;
+      padding: 7px 12px;
+      font-weight: 500;
+    }
+    .demo-bar strong {
+      color: #38bdf8;
+      text-transform: uppercase;
+      margin-right: 4px;
+    }
+
+    .container {
+      width: 100%;
+      max-width: 580px;
+      margin: 0 auto;
+      padding: 0 16px;
+    }
+
+    /* Header */
+    header {
+      background: #ffffff;
+      border-bottom: 1px solid var(--border);
+      padding: 12px 0;
+      position: sticky;
+      top: 0;
+      z-index: 40;
+    }
+    .header-row {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+    .brand {
+      font-weight: 800;
+      font-size: 1rem;
+      color: var(--primary);
+      display: flex;
+      align-items: center;
+      gap: 6px;
+    }
+    .brand-tag {
+      background: #e0f2fe;
+      color: #0369a1;
+      font-size: 0.68rem;
+      padding: 2px 6px;
+      border-radius: 4px;
+      font-weight: 700;
+    }
+    .header-btn {
+      background: var(--cta);
+      color: #ffffff;
+      padding: 7px 12px;
+      border-radius: 6px;
+      font-size: 0.8rem;
+      font-weight: 700;
+      text-decoration: none;
+    }
+
+    /* Hero */
+    .hero {
+      background: linear-gradient(180deg, #ffffff 0%, #f1f5f9 100%);
+      padding: 24px 0 28px 0;
+      border-bottom: 1px solid var(--border);
+    }
+    .location-pill {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      background: #eff6ff;
+      border: 1px solid #bfdbfe;
+      color: #1d4ed8;
+      font-size: 0.78rem;
+      font-weight: 600;
+      padding: 4px 10px;
+      border-radius: 999px;
+      margin-bottom: 12px;
+    }
+    .hero h1 {
+      font-size: 1.65rem;
+      line-height: 1.25;
+      font-weight: 800;
+      margin-bottom: 10px;
+      color: #0f172a;
+    }
+    .hero h1 .alert-text {
+      color: #dc2626;
+    }
+    .hero p {
+      font-size: 0.95rem;
+      color: #475569;
+      margin-bottom: 16px;
+    }
+    .countdown-card {
+      background: #fef2f2;
+      border-left: 4px solid #ef4444;
+      padding: 10px 14px;
+      border-radius: 0 8px 8px 0;
+      font-size: 0.84rem;
+      color: #991b1b;
+      margin-bottom: 18px;
+      line-height: 1.4;
+    }
+
+    /* Primary CTAs */
+    .cta-group {
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+      margin-bottom: 12px;
+    }
+    .btn-cta {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+      background: var(--cta);
+      color: #ffffff;
+      font-size: 1rem;
+      font-weight: 700;
+      padding: 15px 18px;
+      border-radius: var(--radius);
+      text-decoration: none;
+      box-shadow: 0 4px 10px rgba(234, 88, 12, 0.3);
+      border: none;
+      cursor: pointer;
+      width: 100%;
+    }
+    .btn-whatsapp {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+      background: var(--whatsapp);
+      color: #ffffff;
+      font-size: 0.98rem;
+      font-weight: 700;
+      padding: 13px 18px;
+      border-radius: var(--radius);
+      text-decoration: none;
+      border: none;
+      cursor: pointer;
+      width: 100%;
+    }
+    .reassurance {
+      display: flex;
+      justify-content: center;
+      gap: 12px;
+      font-size: 0.75rem;
+      color: var(--text-muted);
+      margin-top: 4px;
+    }
+
+    /* Section Base */
+    section {
+      padding: 26px 0;
+    }
+    .sec-heading {
+      font-size: 1.25rem;
+      font-weight: 800;
+      margin-bottom: 6px;
+      color: #0f172a;
+      line-height: 1.3;
+    }
+    .sec-sub {
+      font-size: 0.88rem;
+      color: var(--text-muted);
+      margin-bottom: 16px;
+    }
+
+    /* Pain Point Cards */
+    .pain-box {
+      background: #ffffff;
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 14px 16px;
+      margin-bottom: 10px;
+    }
+    .pain-box strong {
+      display: block;
+      color: #b91c1c;
+      font-size: 0.92rem;
+      margin-bottom: 4px;
+    }
+    .pain-box p {
+      font-size: 0.84rem;
+      color: #334155;
+    }
+
+    /* Steps */
+    .step-card {
+      display: flex;
+      gap: 12px;
+      background: #ffffff;
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 14px;
+      margin-bottom: 10px;
+    }
+    .step-num {
+      width: 32px;
+      height: 32px;
+      background: var(--primary);
+      color: #fff;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-weight: 800;
+      font-size: 0.88rem;
+      flex-shrink: 0;
+    }
+    .step-body h3 {
+      font-size: 0.94rem;
+      color: #0f172a;
+      margin-bottom: 3px;
+    }
+    .step-body p {
+      font-size: 0.82rem;
+      color: #475569;
+    }
+
+    /* Free Trial Explainer */
+    .trial-highlight {
+      background: #eff6ff;
+      border: 2px solid #3b82f6;
+      border-radius: var(--radius);
+      padding: 18px 14px;
+    }
+    .trial-pill {
+      background: #1d4ed8;
+      color: #ffffff;
+      font-size: 0.68rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      padding: 3px 7px;
+      border-radius: 4px;
+      display: inline-block;
+      margin-bottom: 8px;
+    }
+    .trial-highlight h2 {
+      font-size: 1.15rem;
+      font-weight: 800;
+      color: #1e3a8a;
+      margin-bottom: 10px;
+    }
+    .trial-items {
+      list-style: none;
+      margin-bottom: 14px;
+    }
+    .trial-items li {
+      display: flex;
+      align-items: flex-start;
+      gap: 8px;
+      font-size: 0.84rem;
+      color: #1e293b;
+      margin-bottom: 8px;
+    }
+    .trial-items li span.check {
+      color: #16a34a;
+      font-weight: 900;
+    }
+
+    /* Booking Form */
+    .booking-card {
+      background: #ffffff;
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 18px 14px;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+    }
+    .field {
+      margin-bottom: 12px;
+    }
+    .field label {
+      display: block;
+      font-size: 0.8rem;
+      font-weight: 700;
+      color: #334155;
+      margin-bottom: 4px;
+    }
+    .field input, .field select {
+      width: 100%;
+      padding: 11px 12px;
+      border: 1px solid #cbd5e1;
+      border-radius: 8px;
+      font-size: 0.92rem;
+      font-family: inherit;
+      background: #fff;
+    }
+    .field input:focus, .field select:focus {
+      outline: none;
+      border-color: var(--primary);
+    }
+
+    /* FAQ */
+    .faq-row {
+      background: #ffffff;
+      border: 1px solid var(--border);
+      border-radius: 8px;
+      margin-bottom: 8px;
+      cursor: pointer;
+    }
+    .faq-title {
+      padding: 12px 14px;
+      font-size: 0.88rem;
+      font-weight: 700;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+    .faq-content {
+      padding: 0 14px 12px 14px;
+      font-size: 0.82rem;
+      color: #475569;
+      display: none;
+    }
+    .faq-row.open .faq-content {
+      display: block;
+    }
+    .faq-row.open .arrow {
+      transform: rotate(180deg);
+    }
+    .arrow {
+      transition: transform 0.2s;
+    }
+
+    /* Sticky Bottom Bar */
+    .mobile-bar {
+      position: fixed;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      background: #ffffff;
+      border-top: 1px solid #cbd5e1;
+      padding: 10px 16px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 10px;
+      z-index: 50;
+      box-shadow: 0 -3px 10px rgba(0,0,0,0.06);
+    }
+    .mobile-bar-info strong {
+      display: block;
+      font-size: 0.82rem;
+      color: #0f172a;
+    }
+    .mobile-bar-info span {
+      font-size: 0.72rem;
+      color: var(--text-muted);
+    }
+    .mobile-bar-btn {
+      background: var(--cta);
+      color: #ffffff;
+      padding: 10px 16px;
+      font-weight: 700;
+      font-size: 0.86rem;
+      border-radius: 8px;
+      text-decoration: none;
+      white-space: nowrap;
+    }
+
+    footer {
+      border-top: 1px solid var(--border);
+      padding: 20px 0;
+      text-align: center;
+      font-size: 0.72rem;
+      color: var(--text-muted);
+      background: #ffffff;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Demo Disclaimer -->
+  <div class="demo-bar">
+    <strong>Prototype Demo</strong> Fictional Home Tutor Template for DHA & Bahria Town
+  </div>
+
+  <!-- Header -->
+  <header>
+    <div class="container header-row">
+      <div class="brand">
+        <span>MathSprint O-Level</span>
+        <span class="brand-tag">Syllabus 4024</span>
+      </div>
+      <a href="#book-now" class="header-btn">Free Trial</a>
+    </div>
+  </header>
+
+  <!-- Hero Section -->
+  <section class="hero">
+    <div class="container">
+      <div class="location-pill">
+        📍 In-Home: DHA (Phases I–V) & Bahria Town (1–8)
+      </div>
+
+      <h1>
+        Mocks in a Few Weeks & Your Child's O-Level Maths Grade <span class="alert-text">Stuck at C or D?</span>
+      </h1>
+
+      <p>
+        Classroom academies teach the syllabus, not your child's specific gaps. Our 1-on-1 home tutoring pinpoints the exact lost marks in Paper 1 & 2 to secure an A/A* before final Cambridge exams.
+      </p>
+
+      <div class="countdown-card">
+        ⏳ <strong>Mock Prep Notice:</strong> There is still enough time to jump 2 grade boundaries with targeted past-paper drills. Only 3 in-home slots remaining for this month.
+      </div>
+
+      <div class="cta-group">
+        <a href="#book-now" class="btn-cta">
+          Book a Free 60-Min Trial Class
+        </a>
+        <button type="button" class="btn-whatsapp" onclick="directChat()">
+          💬 Chat on WhatsApp to Check Availability
+        </button>
+      </div>
+
+      <div class="reassurance">
+        <span>✓ 100% Free Trial</span>
+        <span>✓ At Your Home</span>
+        <span>✓ Zero Commitment</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- Pain Points -->
+  <section>
+    <div class="container">
+      <h2 class="sec-heading">Why Students Drop Marks in Mocks</h2>
+      <p class="sec-sub">Rereading notes will not work. Here is what actually costs your child marks:</p>
+
+      <div class="pain-box">
+        <strong>1. Paper 1 Mental Maths & Time Panic</strong>
+        <p>Without a calculator, students lose 12–18 marks on basic fraction arithmetic, indices, and algebra manipulation simply due to speed anxiety.</p>
+      </div>
+
+      <div class="pain-box">
+        <strong>2. Paper 2 Multi-Step Geometry & Vectors</strong>
+        <p>Coordinate geometry, 3D trigonometry, and vectors carry high weightage. Students get stuck on step 2 and forfeit 6-mark questions completely.</p>
+      </div>
+
+      <div class="pain-box">
+        <strong>3. Missing Working Marks on Cambridge Schemes</strong>
+        <p>Examiners penalize missing working steps even when the final answer is right. Students must be trained to format steps for method marks (M1, M2).</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- 3-Step Turnaround -->
+  <section style="background: #ffffff; border-top: 1px solid var(--border); border-bottom: 1px solid var(--border);">
+    <div class="container">
+      <h2 class="sec-heading">The Mock Rescue Formula</h2>
+      <p class="sec-sub">Laser-focused preparation for the critical weeks before exams:</p>
+
+      <div class="step-card">
+        <div class="step-num">1</div>
+        <div class="step-body">
+          <h3>Diagnostic Mark-Leak Audit</h3>
+          <p>We test the student on 15 core Cambridge problem types to isolate the exact 20% of topics causing 80% of their lost marks.</p>
+        </div>
+      </div>
+
+      <div class="step-card">
+        <div class="step-num">2</div>
+        <div class="step-body">
+          <h3>Topical Past-Paper Sprints (2018–2025)</h3>
+          <p>No generic textbook questions. Only real Cambridge past papers drilled with strict time limits per mark.</p>
+        </div>
+      </div>
+
+      <div class="step-card">
+        <div class="step-num">3</div>
+        <div class="step-body">
+          <h3>Weekly Timed Mock Simulations</h3>
+          <p>Full papers marked against official Cambridge mark schemes with immediate step-by-step corrections.</p>
+        </div>
+      </div>
+
+      <div style="margin-top: 14px;">
+        <a href="#book-now" class="btn-cta">
+          Book Free Trial to Start Step 1
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Trial Breakdown -->
+  <section>
+    <div class="container">
+      <div class="trial-highlight">
+        <span class="trial-pill">Zero Risk • 100% Free</span>
+        <h2>What Happens During the 60-Min Free Trial?</h2>
+        <p style="font-size: 0.84rem; color: #334155; margin-bottom: 12px;">
+          Conducted comfortably at your residence in DHA or Bahria Town (or online via tablet if preferred):
+        </p>
+
+        <ul class="trial-items">
+          <li>
+            <span class="check">✓</span>
+            <div><strong>40-Min Student Diagnostic:</strong> Live assessment on Paper 1 non-calc & key Paper 2 topics to detect algebraic speed and conceptual blocks.</div>
+          </li>
+          <li>
+            <span class="check">✓</span>
+            <div><strong>15-Min Parent Debrief:</strong> Honest feedback showing the exact weak areas and a realistic grade roadmap for mocks.</div>
+          </li>
+          <li>
+            <span class="check">✓</span>
+            <div><strong>Custom Mock Plan:</strong> A personalized weekly revision schedule handed to you with zero obligation.</div>
+          </li>
+        </ul>
+
+        <a href="#book-now" class="btn-cta" style="background: #1d4ed8;">
+          Schedule In-Home Trial Class
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Booking Form -->
+  <section id="book-now" style="background: #ffffff; border-top: 1px solid var(--border); border-bottom: 1px solid var(--border);">
+    <div class="container">
+      <h2 class="sec-heading" style="text-align: center;">Book Your Free Trial Class</h2>
+      <p class="sec-sub" style="text-align: center;">Takes 30 seconds. Opens directly into WhatsApp with your details.</p>
+
+      <div class="booking-card">
+        <form onsubmit="handleBooking(event)">
+          <div class="field">
+            <label>Parent's Name</label>
+            <input type="text" id="parentName" placeholder="e.g. Dr. Tariq / Mrs. Imran" required />
+          </div>
+
+          <div class="field">
+            <label>Student's Current Situation</label>
+            <select id="studentStatus" required>
+              <option value="" disabled selected>Select status</option>
+              <option value="Struggling at C or D (Urgent mock turnaround)">Struggling at C or D (Urgent mock turnaround)</option>
+              <option value="Borderline U or E (Needs fundamentals rebuild)">Borderline U or E (Needs fundamentals rebuild)</option>
+              <option value="At B grade (Targeting solid A or A*)">At B grade (Targeting solid A or A*)</option>
+              <option value="Losing marks specifically on Paper 1 speed">Losing marks specifically on Paper 1 speed</option>
+            </select>
+          </div>
+
+          <div class="field">
+            <label>Location / Sector</label>
+            <select id="locationArea" required>
+              <option value="" disabled selected>Select your area</option>
+              <option value="DHA Phase 1 / 2">DHA Phase 1 or 2</option>
+              <option value="DHA Phase 3 / 4 / 5">DHA Phase 3, 4, or 5</option>
+              <option value="Bahria Town Phase 1 - 4">Bahria Town Phase 1 – 4</option>
+              <option value="Bahria Town Phase 7 - 8">Bahria Town Phase 7 – 8</option>
+              <option value="Askari / Nearby">Askari / Nearby</option>
+              <option value="Online (Interactive Tablet)">Online (Interactive Tablet)</option>
+            </select>
+          </div>
+
+          <div class="field">
+            <label>Preferred Day / Time</label>
+            <select id="preferredSlot" required>
+              <option value="" disabled selected>Select preferred time</option>
+              <option value="Weekday Afternoon (3 PM - 6 PM)">Weekday Afternoon (3 PM – 6 PM)</option>
+              <option value="Weekday Evening (6 PM - 9 PM)">Weekday Evening (6 PM – 9 PM)</option>
+              <option value="Saturday Any Time">Saturday Any Time</option>
+              <option value="Sunday Any Time">Sunday Any Time</option>
+            </select>
+          </div>
+
+          <div class="field">
+            <label>WhatsApp Number</label>
+            <input type="tel" id="whatsappNum" placeholder="e.g. 0300 1234567" required />
+          </div>
+
+          <button type="submit" class="btn-cta" style="margin-top: 6px;">
+            Confirm & Open WhatsApp Booking
+          </button>
+        </form>
+      </div>
+    </div>
+  </section>
+
+  <!-- FAQs -->
+  <section>
+    <div class="container">
+      <h2 class="sec-heading">Frequently Asked Questions</h2>
+      <p class="sec-sub">Quick answers to common parent questions:</p>
+
+      <div class="faq-row" onclick="toggleFaq(this)">
+        <div class="faq-title">
+          <span>Do you come to our home in DHA / Bahria?</span>
+          <span class="arrow">▼</span>
+        </div>
+        <div class="faq-content">
+          Yes. In-home tutoring is available across all sectors of DHA (Phases 1–5) and Bahria Town (Phases 1–8). The tutor brings all diagnostic tests and printed past paper bundles.
+        </div>
+      </div>
+
+      <div class="faq-row" onclick="toggleFaq(this)">
+        <div class="faq-title">
+          <span>My child is at a D or U. Can they still pass mocks?</span>
+          <span class="arrow">▼</span>
+        </div>
+        <div class="faq-content">
+          Yes. The Cambridge threshold for a C or B is very accessible if easy foundational marks (linear graphs, basic algebra, angles, statistics) are secured first. The trial session maps this out immediately.
+        </div>
+      </div>
+
+      <div class="faq-row" onclick="toggleFaq(this)">
+        <div class="faq-title">
+          <span>Is the trial class completely free?</span>
+          <span class="arrow">▼</span>
+        </div>
+        <div class="faq-content">
+          Yes, 100% free with no deposit, no advance fee, and no obligation to hire.
+        </div>
+      </div>
+
+      <div style="margin-top: 18px;">
+        <a href="#book-now" class="btn-cta">
+          Book Free Trial Class Now
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer>
+    <div class="container">
+      <p><strong>MathSprint O-Level Mentorship (Demo Template)</strong></p>
+      <p>Specialized Cambridge 4024 & IGCSE 0580 Tutoring for DHA & Bahria Town.</p>
+    </div>
+  </footer>
+
+  <!-- Sticky Mobile Bar -->
+  <div class="mobile-bar">
+    <div class="mobile-bar-info">
+      <strong>O-Level Maths Trial</strong>
+      <span>In-Home DHA & Bahria</span>
+    </div>
+    <a href="#book-now" class="mobile-bar-btn">Book Free Trial</a>
+  </div>
+
+  <script>
+    // FAQ Accordion
+    function toggleFaq(el) {
+      el.classList.toggle('open');
+    }
+
+    // Direct WhatsApp Click
+    function directChat() {
+      var phone = "923000000000"; // Demo tutor number
+      var text = encodeURIComponent("Salam! I am a parent in DHA/Bahria looking for an O-Level Maths home tutor before upcoming mocks. I would like to book a free diagnostic trial class.");
+      window.open("https://wa.me/" + phone + "?text=" + text, '_blank');
+    }
+
+    // Form Submit to WhatsApp
+    function handleBooking(e) {
+      e.preventDefault();
+      var parent = document.getElementById('parentName').value.trim();
+      var status = document.getElementById('studentStatus').value;
+      var loc = document.getElementById('locationArea').value;
+      var slot = document.getElementById('preferredSlot').value;
+      var contact = document.getElementById('whatsappNum').value.trim();
+
+      var message = "Salam! I would like to schedule a Free O-Level Maths Trial Class:\n\n" +
+                    "• Parent: " + parent + "\n" +
+                    "• Current Situation: " + status + "\n" +
+                    "• Location: " + loc + "\n" +
+                    "• Preferred Slot: " + slot + "\n" +
+                    "• Contact: " + contact;
+
+      var phone = "923300737350"; // Demo phone number
+      window.open("https://wa.me/" + phone + "?text=" + encodeURIComponent(message), '_blank');
+    }
+  </script>
+</body>
+</html>
