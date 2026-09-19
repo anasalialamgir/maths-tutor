@@ -33,9 +33,9 @@
       font-family: var(--font);
       background-color: var(--bg);
       color: var(--text-main);
-      line-height: 1.5;
+      line-height: 1.6;
       -webkit-font-smoothing: antialiased;
-      padding-bottom: 80px; /* Offset for sticky bottom CTA bar */
+      padding-bottom: 84px; /* Offset for sticky bottom CTA bar */
     }
 
     /* Demo Notice Badge */
@@ -54,18 +54,29 @@
       margin-right: 4px;
     }
 
+    /* Responsive Container: Mobile-first, expands gracefully for Desktop */
     .container {
       width: 100%;
-      max-width: 580px;
+      max-width: 640px;
       margin: 0 auto;
       padding: 0 16px;
+    }
+
+    @media (min-width: 768px) {
+      .container {
+        max-width: 740px;
+        padding: 0 24px;
+      }
+      body {
+        padding-bottom: 90px;
+      }
     }
 
     /* Header */
     header {
       background: #ffffff;
       border-bottom: 1px solid var(--border);
-      padding: 12px 0;
+      padding: 14px 0;
       position: sticky;
       top: 0;
       z-index: 40;
@@ -77,7 +88,7 @@
     }
     .brand {
       font-weight: 800;
-      font-size: 1rem;
+      font-size: 1.05rem;
       color: var(--primary);
       display: flex;
       align-items: center;
@@ -87,16 +98,16 @@
       background: #e2e8f0;
       color: var(--primary);
       font-size: 0.68rem;
-      padding: 2px 6px;
+      padding: 2px 7px;
       border-radius: 4px;
       font-weight: 700;
     }
     .header-btn {
       background: var(--cta);
       color: #ffffff;
-      padding: 7px 14px;
+      padding: 8px 16px;
       border-radius: 6px;
-      font-size: 0.8rem;
+      font-size: 0.82rem;
       font-weight: 700;
       text-decoration: none;
       transition: background 0.2s;
@@ -108,8 +119,13 @@
     /* Hero */
     .hero {
       background: linear-gradient(180deg, #ffffff 0%, #f1f5f9 100%);
-      padding: 24px 0 28px 0;
+      padding: 26px 0 32px 0;
       border-bottom: 1px solid var(--border);
+    }
+    @media (min-width: 768px) {
+      .hero {
+        padding: 40px 0 46px 0;
+      }
     }
     .location-pill {
       display: inline-flex;
@@ -120,16 +136,22 @@
       color: var(--primary);
       font-size: 0.78rem;
       font-weight: 600;
-      padding: 4px 10px;
+      padding: 4px 12px;
       border-radius: 999px;
-      margin-bottom: 12px;
+      margin-bottom: 14px;
     }
     .hero h1 {
-      font-size: 1.65rem;
+      font-size: 1.7rem;
       line-height: 1.25;
       font-weight: 800;
-      margin-bottom: 10px;
+      margin-bottom: 12px;
       color: var(--primary);
+      text-align: left;
+    }
+    @media (min-width: 768px) {
+      .hero h1 {
+        font-size: 2.15rem;
+      }
     }
     .hero h1 .alert-text {
       color: #b91c1c;
@@ -138,90 +160,141 @@
       font-size: 0.95rem;
       color: #475569;
       margin-bottom: 16px;
+      line-height: 1.6;
+    }
+    @media (min-width: 768px) {
+      .hero p {
+        font-size: 1.05rem;
+      }
     }
     .countdown-card {
       background: #fef2f2;
       border-left: 4px solid #b91c1c;
-      padding: 10px 14px;
+      padding: 12px 16px;
       border-radius: 0 8px 8px 0;
-      font-size: 0.84rem;
+      font-size: 0.86rem;
       color: #991b1b;
-      margin-bottom: 18px;
-      line-height: 1.4;
+      margin-bottom: 20px;
+      line-height: 1.5;
     }
 
-    /* Primary CTAs */
+    /* Justified Text Formatting */
+    .hero p,
+    .pain-box p,
+    .step-body p,
+    .trial-items li div,
+    .tutor-bio p,
+    .faq-content {
+      text-align: justify;
+      text-justify: inter-word;
+    }
+
+    /* Centralized Button Wrappers for Unified Symmetrical Layout */
+    .btn-center-wrap {
+      width: 100%;
+      display: flex;
+      justify-content: center;
+      margin-top: 16px;
+    }
+    .btn-center-wrap .btn-cta,
+    .btn-center-wrap .btn-whatsapp {
+      width: 100%;
+      max-width: 480px;
+    }
+
+    /* Primary CTA Buttons */
     .cta-group {
       display: flex;
       flex-direction: column;
+      align-items: center;
       gap: 10px;
-      margin-bottom: 12px;
+      margin-bottom: 14px;
+      width: 100%;
     }
     .btn-cta {
       display: flex;
       align-items: center;
       justify-content: center;
+      text-align: center;
       gap: 8px;
       background: var(--cta);
       color: #ffffff;
       font-size: 1rem;
       font-weight: 700;
-      padding: 12px 15px;
+      padding: 15px 20px;
       border-radius: var(--radius);
       text-decoration: none;
       box-shadow: 0 4px 12px rgba(191, 87, 63, 0.28);
       border: none;
       cursor: pointer;
       width: 100%;
-      transition: background 0.2s;
+      transition: background 0.2s, transform 0.1s;
     }
     .btn-cta:hover {
       background: var(--cta-hover);
+    }
+    .btn-cta:active {
+      transform: scale(0.99);
     }
     .btn-whatsapp {
       display: flex;
       align-items: center;
       justify-content: center;
+      text-align: center;
       gap: 8px;
       background: var(--whatsapp);
       color: #ffffff;
       font-size: 0.98rem;
       font-weight: 700;
-      padding: 13px 18px;
+      padding: 13px 20px;
       border-radius: var(--radius);
       text-decoration: none;
       border: none;
       cursor: pointer;
       width: 100%;
-      transition: background 0.2s;
+      transition: background 0.2s, transform 0.1s;
     }
     .btn-whatsapp:hover {
       background: var(--whatsapp-hover);
     }
+    .btn-whatsapp:active {
+      transform: scale(0.99);
+    }
     .reassurance {
       display: flex;
       justify-content: center;
-      gap: 12px;
-      font-size: 0.75rem;
+      gap: 14px;
+      font-size: 0.78rem;
       color: var(--text-muted);
       margin-top: 4px;
+      flex-wrap: wrap;
     }
 
     /* Section Base */
     section {
-      padding: 26px 0;
+      padding: 28px 0;
+    }
+    @media (min-width: 768px) {
+      section {
+        padding: 38px 0;
+      }
     }
     .sec-heading {
-      font-size: 1.25rem;
+      font-size: 1.3rem;
       font-weight: 800;
       margin-bottom: 6px;
       color: var(--primary);
       line-height: 1.3;
     }
+    @media (min-width: 768px) {
+      .sec-heading {
+        font-size: 1.55rem;
+      }
+    }
     .sec-sub {
       font-size: 0.88rem;
       color: var(--text-muted);
-      margin-bottom: 16px;
+      margin-bottom: 18px;
     }
 
     /* Pain Point Cards */
@@ -229,33 +302,36 @@
       background: #ffffff;
       border: 1px solid var(--border);
       border-radius: var(--radius);
-      padding: 14px 16px;
-      margin-bottom: 10px;
+      padding: 16px 18px;
+      margin-bottom: 12px;
+      box-shadow: 0 2px 6px rgba(0, 0, 0, 0.02);
     }
     .pain-box strong {
       display: block;
       color: #b91c1c;
-      font-size: 0.92rem;
-      margin-bottom: 4px;
+      font-size: 0.95rem;
+      margin-bottom: 5px;
     }
     .pain-box p {
-      font-size: 0.84rem;
+      font-size: 0.88rem;
       color: #334155;
+      line-height: 1.55;
     }
 
     /* Steps */
     .step-card {
       display: flex;
-      gap: 12px;
+      gap: 14px;
       background: #ffffff;
       border: 1px solid var(--border);
       border-radius: var(--radius);
-      padding: 14px;
-      margin-bottom: 10px;
+      padding: 16px;
+      margin-bottom: 12px;
+      box-shadow: 0 2px 6px rgba(0, 0, 0, 0.02);
     }
     .step-num {
-      width: 32px;
-      height: 32px;
+      width: 36px;
+      height: 36px;
       background: var(--primary);
       color: #fff;
       border-radius: 50%;
@@ -263,17 +339,18 @@
       align-items: center;
       justify-content: center;
       font-weight: 800;
-      font-size: 0.88rem;
+      font-size: 0.92rem;
       flex-shrink: 0;
     }
     .step-body h3 {
-      font-size: 0.94rem;
+      font-size: 0.98rem;
       color: var(--primary);
-      margin-bottom: 3px;
+      margin-bottom: 4px;
     }
     .step-body p {
-      font-size: 0.82rem;
+      font-size: 0.86rem;
       color: #475569;
+      line-height: 1.55;
     }
 
     /* Free Trial Explainer */
@@ -281,41 +358,43 @@
       background: #ffffff;
       border: 2px solid var(--primary);
       border-radius: var(--radius);
-      padding: 18px 14px;
+      padding: 20px 18px;
       box-shadow: 0 4px 14px rgba(11, 30, 54, 0.06);
     }
     .trial-pill {
       background: var(--primary);
       color: #ffffff;
-      font-size: 0.68rem;
+      font-size: 0.7rem;
       font-weight: 700;
       text-transform: uppercase;
-      padding: 3px 7px;
+      padding: 3px 8px;
       border-radius: 4px;
       display: inline-block;
       margin-bottom: 8px;
     }
     .trial-highlight h2 {
-      font-size: 1.15rem;
+      font-size: 1.2rem;
       font-weight: 800;
       color: var(--primary);
-      margin-bottom: 10px;
+      margin-bottom: 12px;
     }
     .trial-items {
       list-style: none;
-      margin-bottom: 14px;
+      margin-bottom: 16px;
     }
     .trial-items li {
       display: flex;
       align-items: flex-start;
-      gap: 8px;
-      font-size: 0.84rem;
+      gap: 10px;
+      font-size: 0.88rem;
       color: #1e293b;
-      margin-bottom: 8px;
+      margin-bottom: 10px;
     }
     .trial-items li span.check {
       color: #16a34a;
       font-weight: 900;
+      font-size: 1rem;
+      line-height: 1.3;
     }
 
     /* Meet Your Tutor Section */
@@ -323,7 +402,7 @@
       background: #ffffff;
       border: 1px solid var(--border);
       border-radius: var(--radius);
-      padding: 20px 16px;
+      padding: 22px 18px;
       box-shadow: 0 4px 14px rgba(0, 0, 0, 0.04);
       border-top: 4px solid var(--primary);
     }
@@ -336,9 +415,9 @@
 
     /* Precision circular headshot crop */
     .tutor-avatar-frame {
-      width: 88px;
-      height: 88px;
-      min-width: 88px;
+      width: 90px;
+      height: 90px;
+      min-width: 90px;
       border-radius: 50%;
       overflow: hidden;
       border: 3px solid #cbd5e1;
@@ -350,31 +429,31 @@
     .tutor-avatar-img {
       width: 100%;
       height: 100%;
-      /* 63% horizontal, 18% vertical focuses on the tutor's face, glasses, and tie */
+      /* 63% horizontal, 18% vertical focuses directly on tutor face and tie */
       object-fit: cover;
       object-position: 63% 18%;
       display: block;
     }
 
     .tutor-meta h3 {
-      font-size: 1.02rem;
+      font-size: 1.05rem;
       font-weight: 800;
       color: var(--primary);
-      margin-bottom: 2px;
+      margin-bottom: 3px;
     }
     .tutor-meta .tutor-role {
-      font-size: 0.8rem;
+      font-size: 0.82rem;
       font-weight: 600;
       color: var(--cta);
-      margin-bottom: 4px;
+      margin-bottom: 5px;
     }
     .tutor-meta .tutor-badge {
       display: inline-block;
       background: #f1f5f9;
       color: var(--primary);
-      font-size: 0.7rem;
+      font-size: 0.72rem;
       font-weight: 700;
-      padding: 2px 7px;
+      padding: 2px 8px;
       border-radius: 4px;
       border: 1px solid #e2e8f0;
     }
@@ -385,28 +464,28 @@
       background: #f8fafc;
       border: 1px solid var(--border);
       border-radius: 8px;
-      padding: 10px;
+      padding: 12px;
       margin-bottom: 14px;
     }
     .tutor-stat-item strong {
       display: block;
-      font-size: 1.05rem;
+      font-size: 1.08rem;
       font-weight: 800;
       color: var(--primary);
       line-height: 1.2;
     }
     .tutor-stat-item span {
-      font-size: 0.72rem;
+      font-size: 0.74rem;
       color: var(--text-muted);
     }
     .tutor-bio {
-      font-size: 0.85rem;
+      font-size: 0.88rem;
       color: #334155;
-      line-height: 1.5;
+      line-height: 1.6;
       margin-bottom: 16px;
     }
     .tutor-bio p {
-      margin-bottom: 8px;
+      margin-bottom: 10px;
     }
 
     /* Booking Form */
@@ -414,25 +493,27 @@
       background: #ffffff;
       border: 1px solid var(--border);
       border-radius: var(--radius);
-      padding: 18px 14px;
-      box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+      padding: 22px 18px;
+      box-shadow: 0 4px 14px rgba(0,0,0,0.05);
+      max-width: 520px;
+      margin: 0 auto;
     }
     .field {
-      margin-bottom: 12px;
+      margin-bottom: 14px;
     }
     .field label {
       display: block;
-      font-size: 0.8rem;
+      font-size: 0.82rem;
       font-weight: 700;
       color: #334155;
-      margin-bottom: 4px;
+      margin-bottom: 5px;
     }
     .field input, .field select {
       width: 100%;
-      padding: 11px 12px;
+      padding: 12px 14px;
       border: 1px solid #cbd5e1;
       border-radius: 8px;
-      font-size: 0.92rem;
+      font-size: 0.94rem;
       font-family: inherit;
       background: #fff;
     }
@@ -447,12 +528,12 @@
       background: #ffffff;
       border: 1px solid var(--border);
       border-radius: 8px;
-      margin-bottom: 8px;
+      margin-bottom: 10px;
       cursor: pointer;
     }
     .faq-title {
-      padding: 12px 14px;
-      font-size: 0.88rem;
+      padding: 14px 16px;
+      font-size: 0.92rem;
       font-weight: 700;
       color: var(--primary);
       display: flex;
@@ -460,9 +541,10 @@
       align-items: center;
     }
     .faq-content {
-      padding: 0 14px 12px 14px;
-      font-size: 0.82rem;
+      padding: 0 16px 14px 16px;
+      font-size: 0.86rem;
       color: #475569;
+      line-height: 1.6;
       display: none;
     }
     .faq-row.open .faq-content {
@@ -476,7 +558,7 @@
       color: var(--cta);
     }
 
-    /* Sticky Bottom Bar */
+    /* Sticky Bottom Bar (Responsive Dock) */
     .mobile-bar {
       position: fixed;
       bottom: 0;
@@ -488,25 +570,36 @@
       display: flex;
       align-items: center;
       justify-content: space-between;
-      gap: 10px;
+      gap: 12px;
       z-index: 50;
-      box-shadow: 0 -3px 10px rgba(0,0,0,0.06);
+      box-shadow: 0 -4px 12px rgba(0,0,0,0.08);
+    }
+    @media (min-width: 768px) {
+      .mobile-bar {
+        max-width: 740px;
+        left: 50%;
+        transform: translateX(-50%);
+        border-radius: 12px 12px 0 0;
+        border-left: 1px solid #cbd5e1;
+        border-right: 1px solid #cbd5e1;
+        padding: 12px 24px;
+      }
     }
     .mobile-bar-info strong {
       display: block;
-      font-size: 0.82rem;
+      font-size: 0.84rem;
       color: var(--primary);
     }
     .mobile-bar-info span {
-      font-size: 0.72rem;
+      font-size: 0.74rem;
       color: var(--text-muted);
     }
     .mobile-bar-btn {
       background: var(--cta);
       color: #ffffff;
-      padding: 10px 16px;
+      padding: 11px 18px;
       font-weight: 700;
-      font-size: 0.86rem;
+      font-size: 0.88rem;
       border-radius: 8px;
       text-decoration: none;
       white-space: nowrap;
@@ -518,9 +611,9 @@
 
     footer {
       border-top: 1px solid var(--border);
-      padding: 20px 0;
+      padding: 24px 0;
       text-align: center;
-      font-size: 0.72rem;
+      font-size: 0.74rem;
       color: var(--text-muted);
       background: #ffffff;
     }
@@ -564,10 +657,10 @@
       </div>
 
       <div class="cta-group">
-        <a href="#book-now" class="btn-cta">
+        <a href="#book-now" class="btn-cta" style="max-width: 480px;">
           Book a Free 60-Min Trial Class
         </a>
-        <button type="button" class="btn-whatsapp" onclick="directChat()">
+        <button type="button" class="btn-whatsapp" style="max-width: 480px;" onclick="directChat()">
           💬 Chat on WhatsApp to Check Availability
         </button>
       </div>
@@ -633,7 +726,7 @@
         </div>
       </div>
 
-      <div style="margin-top: 14px;">
+      <div class="btn-center-wrap">
         <a href="#book-now" class="btn-cta">
           Book Free Trial to Start Step 1
         </a>
@@ -647,7 +740,7 @@
       <div class="trial-highlight">
         <span class="trial-pill">Zero Risk • 100% Free</span>
         <h2>What Happens During the 60-Min Free Trial?</h2>
-        <p style="font-size: 0.84rem; color: #334155; margin-bottom: 12px;">
+        <p style="font-size: 0.88rem; color: #334155; margin-bottom: 14px;">
           Conducted comfortably at your residence in DHA or Bahria Town (or online via tablet if preferred):
         </p>
 
@@ -666,9 +759,11 @@
           </li>
         </ul>
 
-        <a href="#book-now" class="btn-cta" style="background: var(--primary);">
-          Schedule In-Home Trial Class
-        </a>
+        <div class="btn-center-wrap">
+          <a href="#book-now" class="btn-cta" style="background: var(--primary);">
+            Schedule In-Home Trial Class
+          </a>
+        </div>
       </div>
     </div>
   </section>
@@ -723,12 +818,14 @@
 
           <div class="field">
             <label>WhatsApp Number</label>
-            <input type="tel" id="whatsappNum" placeholder="e.g. 0300 1234567" required />
+            <input type="tel" id="whatsappNum" placeholder="e.g. 0330 0737350" required />
           </div>
 
-          <button type="submit" class="btn-cta" style="margin-top: 6px;">
-            Confirm & Open WhatsApp Booking
-          </button>
+          <div class="btn-center-wrap" style="margin-top: 8px;">
+            <button type="submit" class="btn-cta">
+              Confirm & Open WhatsApp Booking
+            </button>
+          </div>
         </form>
       </div>
     </div>
@@ -773,7 +870,7 @@
             <span>Dedicated In-Home Slots</span>
           </div>
           <div class="tutor-stat-item">
-            <strong>95%</strong>
+            <strong>88%</strong>
             <span>Jumped 2+ Grades in Mocks</span>
           </div>
         </div>
@@ -787,9 +884,12 @@
           </p>
         </div>
 
-        <a href="#book-now" class="btn-cta">
-          Book Free Diagnostic Trial with Tutor
-        </a>
+        <!-- Centered Button to match the rest of the page -->
+        <div class="btn-center-wrap">
+          <a href="#book-now" class="btn-cta">
+            Book Free Diagnostic Trial with Tutor
+          </a>
+        </div>
       </div>
     </div>
   </section>
@@ -830,7 +930,7 @@
         </div>
       </div>
 
-      <div style="margin-top: 18px;">
+      <div class="btn-center-wrap" style="margin-top: 20px;">
         <a href="#book-now" class="btn-cta">
           Book Free Trial Class Now
         </a>
@@ -846,7 +946,7 @@
     </div>
   </footer>
 
-  <!-- Sticky Mobile Bar -->
+  <!-- Sticky Mobile Bar (Responsive Dock) -->
   <div class="mobile-bar">
     <div class="mobile-bar-info">
       <strong>O-Level Maths Trial</strong>
@@ -861,14 +961,14 @@
       el.classList.toggle('open');
     }
 
-    // Direct WhatsApp Click
+    // Direct WhatsApp Click with updated phone number
     function directChat() {
-      var phone = "923000000000"; // Demo tutor number
+      var phone = "923300737350"; 
       var text = encodeURIComponent("Salam! I am a parent in DHA/Bahria looking for an O-Level Maths home tutor before upcoming mocks. I would like to book a free diagnostic trial class.");
       window.open("https://wa.me/" + phone + "?text=" + text, '_blank');
     }
 
-    // Form Submit to WhatsApp
+    // Form Submit to WhatsApp with updated phone number
     function handleBooking(e) {
       e.preventDefault();
       var parent = document.getElementById('parentName').value.trim();
@@ -884,9 +984,10 @@
                     "• Preferred Slot: " + slot + "\n" +
                     "• Contact: " + contact;
 
-      var phone = "923000000000"; // Demo phone number
+      var phone = "923300737350"; 
       window.open("https://wa.me/" + phone + "?text=" + encodeURIComponent(message), '_blank');
     }
   </script>
 </body>
 </html>
+
