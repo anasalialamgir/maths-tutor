@@ -70,7 +70,7 @@
       margin-right: 4px;
     }
 
-    /* Responsive Container: Fluid on Mobile, Expands to Full Modern Grid on Desktop */
+    /* Responsive Container */
     .container {
       width: 100%;
       max-width: 640px;
@@ -364,7 +364,7 @@
       }
     }
 
-    /* Pain Point Grid: 1 col on mobile, 3 cols on desktop */
+    /* Pain Point Grid */
     .pain-grid {
       display: flex;
       flex-direction: column;
@@ -375,6 +375,9 @@
         display: grid;
         grid-template-columns: repeat(3, 1fr);
         gap: 20px;
+      }
+      .pain-grid img {
+        grid-column: 1 / -1; /* Spans full desktop grid and centers */
       }
     }
     .pain-box {
@@ -399,7 +402,7 @@
       line-height: 1.55;
     }
 
-    /* Steps Grid: 1 col on mobile, 3 cols on desktop */
+    /* Steps Grid */
     .steps-grid {
       display: flex;
       flex-direction: column;
@@ -531,7 +534,7 @@
       margin-bottom: 18px;
     }
 
-    /* Precision circular headshot crop preserving your exact framing */
+    /* Precision circular headshot crop */
     .tutor-avatar-frame {
       width: 94px;
       height: 94px;
@@ -613,7 +616,7 @@
       margin-bottom: 12px;
     }
 
-    /* Booking Form Container & Responsive 2-Col Field Layout */
+    /* Booking Form */
     .booking-card {
       background: #ffffff;
       border: 1px solid var(--border);
@@ -698,7 +701,7 @@
       color: var(--cta);
     }
 
-    /* Sticky Bottom Bar (Active on Mobile, Adapts to Tablet Dock, Hidden on Desktop for Native Experience) */
+    /* Sticky Bottom Bar */
     .mobile-bar {
       position: fixed;
       bottom: 0;
@@ -729,7 +732,7 @@
     }
     @media (min-width: 1024px) {
       .mobile-bar {
-        display: none; /* Native desktop experience */
+        display: none;
       }
     }
     .mobile-bar-info strong {
@@ -809,7 +812,7 @@
           </div>
         </div>
 
-        <!-- Right: Action Box on Desktop (Stacked naturally on Mobile) -->
+        <!-- Right: Action Box on Desktop -->
         <div class="hero-action-panel">
           <div class="hero-action-title">Book a Free 60-Min Trial Class</div>
           <div class="hero-action-sub">Zero fee • Conducted at your residence in DHA or Bahria</div>
@@ -854,6 +857,9 @@
           <strong>3. Missing Working Marks on Cambridge Schemes</strong>
           <p>Examiners penalize missing working steps even when the final answer is right. Students must be trained to format steps for method marks (M1, M2).</p>
         </div>
+
+        <!-- Math Solution Graphic inserted right after pain-box 3 -->
+        <img src="math-solution.png" alt="Math Solution Graphic" style="width: 100%; max-width: 600px; margin: 16px auto; display: block; border-radius: 12px;">
       </div>
     </div>
   </section>
@@ -1115,7 +1121,7 @@
     </div>
   </footer>
 
-  <!-- Sticky Mobile Bar (Active on Mobile, Adapts to Tablet Dock, Hidden on Desktop) -->
+  <!-- Sticky Mobile Bar -->
   <div class="mobile-bar">
     <div class="mobile-bar-info">
       <strong>O-Level Maths Trial</strong>
